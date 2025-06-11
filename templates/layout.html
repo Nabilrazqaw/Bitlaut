@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Sistem Prediksi Overfishing{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('beranda') }}">Beranda</a></li>
+      <li><a href="{{ url_for('prediksi') }}">Prediksi Overfishing</a></li>
+      <li><a href="{{ url_for('peta') }}">Peta Zona Rawan</a></li>
+      <li><a href="{{ url_for('statistik') }}">Statistik & Tren</a></li>
+      <li><a href="{{ url_for('kontak') }}">Kontak Tim</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sistem Informasi Kelautan</p>
+  </footer>
+</body>
+</html>

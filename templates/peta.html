@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peta Wilayah Penangkapan Ikan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold text-center mb-4">Peta Wilayah Penangkapan Ikan</h1>
+
+   <!-- Gambar Umum Peta Indonesia -->
+<div class="mb-8 text-center">
+  <img src="/static/petaa.jpg" alt="Peta Kepadatan Penangkapan Ikan di Indonesia" class="w-full max-w-3xl mx-auto rounded shadow" />
+  <p class="text-sm text-gray-600 mt-1">Sumber: Peta WPP RI - KKP</p>
+</div>
+
+    <!-- Dropdown Navigasi -->
+    <div class="mb-10 text-center">
+      <label for="wilayah" class="block text-lg font-medium mb-2">Pilih Wilayah:</label>
+      <select id="wilayah" class="px-4 py-2 border border-gray-300 rounded shadow">
+        <option value="">-- Pilih Wilayah --</option>
+        <option value="natuna">Natuna</option>
+        <option value="halmahera">Teluk Tomini, Laut Halmahera</option>
+        <option value="banda">Laut Banda</option>
+        <option value="makassar">Laut Makassar</option>
+      </select>
+    </div>
+
+    <!-- Gambar-Gambar Peta Per Wilayah -->
+    <div id="semua-gambar" class="space-y-12">
+      <!-- Natuna -->
+      <div id="natuna" class="text-center">
+        <h2 class="text-xl font-semibold mb-2">Wilayah Natuna</h2>
+        <img src="/static/natuna.png" alt="Peta Natuna" class="w-full max-w-4xl mx-auto rounded shadow" />
+        <p class="text-sm text-gray-600 mt-1">
+          Sumber: Kementerian Kelautan dan Perikanan – 
+          <a href="https://www.kkp.go.id" target="_blank" class="text-blue-600 underline">kkp.go.id</a>
+        </p>
+      </div>
+
+      <!-- Halmahera -->
+      <div id="halmahera" class="text-center">
+        <h2 class="text-xl font-semibold mb-2">Teluk Tomini, Laut Halmahera, Laut Maluku, Laut Seram, Teluk Berau</h2>
+        <img src="/static/Teluk Tomini, Laut Maluku, Laut Halmahera, Laut Seram, Teluk Berau.png" alt="Peta Halmahera" class="w-full max-w-4xl mx-auto rounded shadow" />
+        <p class="text-sm text-gray-600 mt-1">
+          Sumber: Kementerian Kelautan dan Perikanan – 
+          <a href="https://kkp.go.id" target="_blank" class="text-blue-600 underline">kkp.go.id</a>
+        </p>
+      </div>
+
+      <!-- Laut Banda -->
+      <div id="banda" class="text-center">
+        <h2 class="text-xl font-semibold mb-2">Wilayah Laut Banda</h2>
+        <img src="/static/tolo, laut banda.png" alt="Peta Banda" class="w-full max-w-4xl mx-auto rounded shadow" />
+        <p class="text-sm text-gray-600 mt-1">
+          Sumber: 
+          <a href="https://portal-informasi.kkp.go.id/pdpi/" target="_blank" class="text-blue-600 underline">portal-informasi.kkp.go.id/pdpi</a>
+        </p>
+      </div>
+
+      <!-- Laut Makassar -->
+      <div id="makassar" class="text-center">
+        <h2 class="text-xl font-semibold mb-2">Wilayah Laut Makassar</h2>
+        <img src="/static/Selat Makassar, Teluk Bone, Laut Flores, Laut Bali.png" alt="Peta Makassar" class="w-full max-w-4xl mx-auto rounded shadow" />
+        <p class="text-sm text-gray-600 mt-1">
+          Sumber: 
+          <a href="https://portal-informasi.kkp.go.id/pdpi/" target="_blank" class="text-blue-600 underline">portal-informasi.kkp.go.id/pdpi</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Scroll -->
+  <script>
+    const dropdown = document.getElementById("wilayah");
+
+    dropdown.addEventListener("change", function () {
+      const targetId = this.value;
+      if (targetId) {
+        const section = document.getElementById(targetId);
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistik & Tren{% endblock %}
+
+{% block content %}
+<h2>Statistik & Tren Overfishing</h2>
+<p>
+  Grafik berikut menunjukkan adanya tren overfishing: jumlah kapal meningkat, sementara hasil tangkapan menurun.
+  Ini merupakan indikator penting perlunya kebijakan perikanan berkelanjutan.
+</p> 
+<img src="{{ url_for('static', filename='grafik_overfishing.jpg') }}" alt="Grafik Overfishing" width="600">
+{% endblock %}

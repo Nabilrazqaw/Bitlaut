@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Beranda - Sistem BitLaut{% endblock %}
+
+{% block content %}
+<div style="padding: 40px; background-color: #f1f5f9; min-height: calc(100vh - 150px);">
+  <h1 class="text-4xl font-bold mb-4">Selamat Datang di Sistem BitLaut</h1>
+  <p class="mb-4">Website ini membantu memprediksi potensi overfishing berdasarkan data yang Anda input.</p>
+  <p class="mb-8"><strong>Overfishing</strong> adalah penangkapan ikan secara berlebihan yang dapat merusak keseimbangan ekosistem laut.</p>
+
+  <!-- Gambar 1 -->
+  <img src="{{ url_for('static', filename='ikan.jpg') }}" alt="Overfishing" class="mx-auto rounded-lg shadow mb-4" style="width: 400px; height: auto;">
+
+  <!-- Penjelasan Overfishing -->
+  <h2 class="text-2xl font-semibold mt-6 mb-2">Penangkapan Ikan Berlebihan (Overfishing)</h2>
+  <p class="mb-4">Penangkapan ikan berlebihan merupakan tantangan serius bagi keberlanjutan sumber daya laut Indonesia. Sebagai produsen ikan terbesar kedua di dunia, Indonesia menghadapi tekanan besar terhadap stok ikan akibat penangkapan yang melebihi kapasitas regenerasi alami.</p>
+
+  <!-- Gambar 2 -->
+  <img src="{{ url_for('static', filename='ikan2.jpg') }}" alt="Pelabuhan Kapal Nelayan" class="mx-auto rounded-lg shadow mb-4" style="width: 400px; height: auto;">
+
+  <!-- Situasi Terkini -->
+  <h3 class="text-xl font-semibold mt-6 mb-2">Situasi Terkini Penangkapan Ikan Berlebihan di Indonesia</h3>
+  <ul class="list-disc list-inside mb-4">
+    <li><strong>Tingkat Eksploitasi Berlebihan:</strong> Lebih dari 80% populasi ikan di Indonesia mengalami eksploitasi berlebihan.</li>
+    <li><strong>Penangkapan Ikan Ilegal:</strong> Sekitar 30% aktivitas penangkapan ikan tergolong ilegal (IUU fishing).</li>
+    <li><strong>Stok Ikan Terancam:</strong> Di perairan Larantuka, tingkat pemanfaatan ikan layang telah mencapai 103%.</li>
+  </ul>
+
+  <!-- Gambar 3 -->
+  <img src="{{ url_for('static', filename='ikan3.jpg') }}" alt="Kerusakan Terumbu Karang" class="mx-auto rounded-lg shadow mb-4" style="width: 400px; height: auto;">
+
+  <!-- Dampak -->
+  <h3 class="text-xl font-semibold mt-6 mb-2">Dampak Penangkapan Ikan Berlebihan</h3>
+  <ul class="list-disc list-inside mb-4">
+    <li><strong>Ekonomi dan Sosial:</strong> Mengancam mata pencaharian 12 juta orang dan ketahanan pangan nasional.</li>
+    <li><strong>Lingkungan:</strong> Menyebabkan ketidakseimbangan ekosistem laut dan degradasi habitat penting seperti terumbu karang.</li>
+  </ul>
+
+  <!-- Gambar 4 -->
+  <img src="{{ url_for('static', filename='ikan4.jpg') }}" alt="Upaya penanggulangan" class="mx-auto rounded-lg shadow mb-4" style="width: 400px; height: auto;">
+
+  <!-- Solusi -->
+  <h3 class="text-xl font-semibold mt-6 mb-2">Upaya Penanggulangan</h3>
+  <ul class="list-disc list-inside mb-4">
+    <li><strong>Kebijakan Penangkapan Ikan Terukur:</strong> Mengatur jumlah tangkapan berdasarkan potensi sumber daya ikan.</li>
+    <li><strong>Alat Tangkap Ramah Lingkungan:</strong> Seperti pancing ulur, bubu lipat, dan jaring udang.</li>
+    <li><strong>Pemberdayaan Nelayan Skala Kecil:</strong> Melalui pelatihan praktik perikanan berkelanjutan.</li>
+  </ul>
+</div>
+{% endblock %}

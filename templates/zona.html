@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Peta Zona Rawan Overfishing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .navbar {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar select {
+      padding: 6px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #map-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    #map-image {
+      max-width: 90%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+ <div class="navbar">
+  <div style="font-weight: bold;">Peta Zona Rawan Overfishing</div>
+  <select id="wilayahSelect" onchange="gantiGambar()">
+    <option value="">-- Pilih Provinsi/Kota/Kecamatan --</option>
+    <option value="natuna">Kabupaten Natuna, Kepulauan Riau</option>
+    <option value="tarakan">Kota Tarakan, Kalimantan Utara</option>
+    <option value="wakatobi">Wakatobi, Sulawesi Tenggara</option>
+    <option value="banyuwangi">Banyuwangi, Jawa Timur</option>
+  </select>
+</div>
+
+<div id="map-container">
+  <img id="map-image" src="peta2.jpg" alt="Peta Zona Rawan Overfishing" style="max-width: 90%; border:1px solid #ccc; margin-top:20px;">
+</div>
+
+<script>
+  function gantiGambar() {
+    const pilihan = document.getElementById("wilayahSelect").value;
+    const gambar = document.getElementById("map-image");
+
+    if (pilihan === "") {
+      gambar.src = "peta2.jpg";
+    } else {
+      gambar.src = pilihan + ".jpg";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Sistem Informasi Kelautan{% endblock %}</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+    }
+    .navbar {
+      background-color: #0078BD;
+      padding: 20px 0;
+      border-radius: 10px 10px 0 0;
+    }
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .navbar-title {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .navbar-nav {
+      display: flex;
+      gap: 30px;
+    }
+    .navbar-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-container">
+      <h2 class="navbar-title">Sistem Informasi Kelautan</h2>
+      <nav class="navbar-nav">
+        <a href="/">Beranda</a>
+        <a href="/prediksi">Prediksi Overfishing</a>
+        <a href="/peta">Peta Zona Rawan</a>
+        <a href="/statistik">Statistik & Tren</a>
+        <a href="/kontak">Kontak Tim</a>
+      </nav>
+    </div>
+  </div>
+
+  {% block content %}{% endblock %}
+</body>
+</html>

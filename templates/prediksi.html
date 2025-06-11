@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Prediksi Overfishing - BitLaut{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-slate-100 py-12 px-6">
+  <div class="max-w-2xl mx-auto bg-white p-10 rounded-lg shadow-lg">
+    <h1 class="text-4xl font-bold mb-10 text-center text-blue-800">Prediksi Potensi Overfishing</h1>
+
+    {% if hasil %}
+      <div class="bg-green-50 p-8 rounded-lg text-center border border-green-300">
+        <h2 class="text-3xl font-semibold text-green-800 mb-6">Hasil Prediksi</h2>
+        <p class="text-2xl mb-3">Status Overfishing: <strong>{{ hasil.status }}</strong></p>
+        <p class="text-2xl mb-6">Probabilitas: <strong>{{ hasil.probabilitas }}%</strong></p>
+        <a href="/prediksi" class="inline-block mt-4 text-blue-600 hover:underline text-lg">← Kembali ke Form Prediksi</a>
+      </div>
+    {% else %}
+      <form method="POST" action="/prediksi" class="space-y-8">
+        <div>
+          <label class="block mb-2 font-semibold text-gray-700 text-lg" for="jumlah_kapal">Jumlah Kapal</label>
+          <input type="number" name="jumlah_kapal" required class="w-full p-4 border border-gray-300 rounded-lg text-lg" />
+        </div>
+
+        <div>
+          <label class="block mb-2 font-semibold text-gray-700 text-lg" for="hasil_tangkapan">Hasil Tangkapan (kg)</label>
+          <input type="number" name="hasil_tangkapan" required class="w-full p-4 border border-gray-300 rounded-lg text-lg" />
+        </div>
+
+        <div>
+          <label class="block mb-2 font-semibold text-gray-700 text-lg" for="alat_tangkap">Jenis Alat Tangkap</label>
+          <select name="alat_tangkap" required class="w-full p-4 border border-gray-300 rounded-lg text-lg">
+            <option value="">-- Pilih --</option>
+            <option value="Tradisional">Tradisional</option>
+            <option value="Modern">Modern</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-2 font-semibold text-gray-700 text-lg" for="musim">Musim Penangkapan</label>
+          <select name="musim" required class="w-full p-4 border border-gray-300 rounded-lg text-lg">
+            <option value="">-- Pilih --</option>
+            <option value="Musim Ikan">Musim Ikan</option>
+            <option value="Musim Sepi">Musim Sepi</option>
+            <option value="Paceklik">Paceklik</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-2 font-semibold text-gray-700 text-lg" for="zona">Zona Penangkapan</label>
+          <select name="zona" required class="w-full p-4 border border-gray-300 rounded-lg text-lg">
+            <option value="">-- Pilih --</option>
+            <option value="Zona Hijau">Zona Hijau</option>
+            <option value="Zona Kuning">Zona Kuning</option>
+            <option value="Zona Merah">Zona Merah</option>
+          </select>
+        </div>
+
+        <div class="pt-6">
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg shadow text-lg">
+            Prediksi Sekarang
+          </button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
