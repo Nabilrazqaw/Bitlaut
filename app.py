@@ -1,7 +1,4 @@
 
-
-app = Flask(__name__)
-
 @app.route('/')
 def beranda():
     return render_template('index.html')
